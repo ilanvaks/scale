@@ -19,11 +19,16 @@ h1,h2,h3 {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: clamp(35px, 4vw, 80px)
 }
 
 h2 {
-  font-size: 40px;
+  font-size: clamp(30px, 4vw, 50px)
+}
+
+h3 {
+  font-size: clamp(25px, 4vw, 50px);
+  text-align: center;
 }
 
 main,section,footer {
@@ -33,7 +38,7 @@ main,section,footer {
 }
 
 p {
-  font-size: 24px;
+  font-size: clamp(17px, 4vw, 35px);
   font-family: 'Space Mono', monospace;
 }
 
@@ -54,7 +59,8 @@ section.container {
 }
 
 section.container div {
-  width: 33%;
+  width: 100%;
+  margin-bottom: 130px;
 }
 
 section.container figure {
@@ -71,6 +77,16 @@ section.container figure img {
 section.container figure img:hover {
   transform: scale(1.3);
   filter: drop-shadow(10px 10px 30px rgba(255, 255, 255, 0.263));
+}
+
+@media (max-width: 768px) {
+  section.container {
+    flex-direction: column;
+  }
+}
+
+section.container figure img:hover {
+  transform: scale(1)
 }
 
 section.container figure summary {
